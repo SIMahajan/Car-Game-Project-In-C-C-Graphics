@@ -1,0 +1,598 @@
+#include<graphics.h>
+#include<dos.h>
+int a=100,b=200;//Player
+int i=1000,j=100;//Car
+int k=1500,l=300;//Truck
+int c=1000,d=300;//Buss
+int g=2000,h=100;//Tector troli
+int m=2500,n=300; // Baick
+int level=50000,score=0;
+int ch,s=1,ent=0;
+int o=200,p=70,q=150,r=40;//windows
+char msg[1];
+void player()
+	{
+    //***********Player************//
+	setcolor(10);
+
+	line(a-45,b,a+40,b);
+	line(a+40,b,a+65,b+20);
+	line(a+65,b+20,a+90,b+25);
+	line (a+90,b+25,a+90,b+40);
+	line(a+90,b+40,a+75,b+40);
+
+	arc(a+60,b+40,0,-180,15);
+	circle(a+60,b+40,10);
+	circle(a+60,b+40,4);
+	
+	line(a-5,b+40,a+45,b+40);
+	
+	arc(a-20,b+40,0,180,15);    
+	circle(a-20,b+40,10);
+	circle(a-20,b+40,4);	
+	
+	line(a-35,b+40,a-50,b+40);
+	line (a-50,b+40,a-50,b+25);
+	line(a-50,b+25,a-45,b+23);
+	line(a-45,b+23,a-45,b);
+
+	line(a-25,b+20,a,b);
+	line(a,b+3,a+40,b+3);
+	line(a+40,b+3,a+62,b+20);
+	line(a+20,b,a+20,b+20);
+	line(a-25,b+20,a+65,b+20);
+}
+ void Animy()
+{
+	//*************Baik************//
+	setcolor(12);
+	arc(m+60,n+25,345,130,20);
+    arc(m+60,n+35,0,180,20);
+
+	circle(m+60,n+35,15);
+	circle(m+60,n+35,6);
+
+	line(m+40,n+32,m-3,n+32);
+
+	arc(m-20,n+35,0,180,20);
+	circle(m-20,n+35,15);
+	circle(m-20,n+35,6);
+	arc(m-20,n+25,90,195,20);
+
+	line(m-20,n+5,m-20,n-5);
+	line(m-20,n-5,m-10,n-5);
+	line(m-10,n-5,m-10,n+10);
+	line(m-10,n+10,m+50,n+10);
+
+	line(m+20,n+10,m+20,n+32);
+
+	line(m-10,n-5,m,n+3);
+	line(m-10,n-5,m,n-13);
+
+	circle(m+20,n-25,7);
+	line(m+3,n+5,m+22,n-8);
+	line(m,n+3,m+20,n-10);
+	line(m+3,n-15,m+22,n-12);
+
+	line(m,n-13,m+20,n-10);
+	line(m+17,n-19,m+10,n-10);
+	line(m+10,n-10,m+10,n+10);
+	line(m+23,n-19,m+30,n-10);
+	line(m+30,n-10,m+30,n+10);
+	
+	//************Car************//
+	setcolor(13);
+	line(i,j,i+40,j);
+	line(i+40,j,i+65,j+20);
+	line(i+65,j+20,i+90,j+25);
+	line (i+90,j+25,i+90,j+40);
+    line(i+90,j+40,i+75,j+40);
+
+    arc(i+60,j+40,0,-180,15);
+	circle(i+60,j+40,10);
+	circle(i+60,j+40,4);
+
+	line(i+45,j+40,i-5,j+40);
+
+	arc(i-20,j+40,0,180,15);
+	circle(i-20,j+40,10);
+	circle(i-20,j+40,4);
+
+	line(i-35,j+40,i-50,j+40);
+	line (i-50,j+40,i-50,j+25);
+	line(i-50,j+25,i-25,j+20);
+	line(i-25,j+20,i,j);
+	
+   	line(i-22,j+20,i,j+3);
+	line(i,j+3,i+40,j+3);
+	line(i+40,j+3,i+62,j+20);
+	
+	//midile
+	line(i+20,j,i+20,j+20);
+	line(i-25,j+20,i+65,j+20);
+
+	
+	//*************Truck***********//
+	setcolor(3);
+	line(k-45,l-5,k-35,l-5);
+    line(k-35,l-5,k-35,l);
+	line(k-35,l,k,l);
+	line(k,l,k,l+30);
+	//midile
+	line(k,l+30,k+90,l+30);
+	line(k,l+30,k+45,l);
+	line(k+45,l,k+90,l+30);
+	line (k+90,l+30,k+90,l+45);
+	line(k+90,l+45,k+75,l+45);
+    
+	arc(k+60,l+45,0,-180,15);
+    circle(k+60,l+45,10);
+	circle(k+60,l+45,4);
+	
+	line(k+45,l+45,k-5,l+45);
+	
+	arc(k-20,l+45,0,180,15);
+	circle(k-20,l+45,10);
+	circle(k-20,l+45,4);
+	
+	line(k-35,l+45,k-50,l+45);
+	line (k-50,l+45,k-50,l+30);
+	line(k-50,l+30,k-45,l+28);
+	line(k-45,l+28,k-45,l-5);
+	
+	line(k-10,l+10,k-30,l+10);
+	line(k-30,l+10,k-30,l+20);
+	line(k-30,l+20,k-10,l+20);
+	line(k-10,l+20,k-10,l+10);
+	
+	
+	//************Buss**********// 
+	setcolor(1);
+	line(c-45,d-5,c-35,d);
+	line(c-35,d,c+90,d);
+	line (c+90,d,c+90,d+45);
+    line(c+90,d+45,c+75,d+45);
+	
+	arc(c+60,d+45,0,-180,15);
+	circle(c+60,d+45,10);
+	circle(c+60,d+45,4);
+	
+	line(c+45,d+45,c-5,d+45);
+	
+	arc(c-20,d+45,0,180,15);
+	circle(c-20,d+45,10);
+	circle(c-20,d+45,4);
+	
+	line(c-35,d+45,c-50,d+45);
+	line (c-50,d+45,c-50,d+40);
+	line(c-50,d+40,c-45,d+38);
+	line(c-45,d+38,c-45,d-5);
+	
+	rectangle(c-10,d+10,c-30,d+20);
+	
+	line(c,d+45,c,d+15);
+	line(c,d+15,c+15,d+15);
+	line(c+15,d+15,c+15,d+45);
+
+	rectangle(c+25,d+10,c+35,d+20);
+	rectangle(c+40,d+10,c+50,d+20);
+	rectangle(c+55,d+10,c+65,d+20);
+	rectangle(c+70,d+10,c+80,d+20);
+
+	//***********Tector Troli**********//
+	setcolor(15);
+	line(g-15,h+18,g+20,h+18);
+	line(g+20,h+18,g+25,h+23);
+	line(g+25,h+23,g+25,h+35);
+	line(g+25,h+35,g+30,h+35);
+	
+	line(g+23,h+21,g+28,h+15);
+	circle(g+28,h+15,5);
+	
+	line(g-5,h+18,g-5,h);
+	line(g-5,h,g,h-5);
+	line(g,h-5,g+2,h-2);
+	line(g+2,h-2,g-3,h);
+	line(g-3,h,g-3,h+18);
+	
+	line(g+45,h+15,g+45,h+10);
+	line(g+45,h+10,g+25,h);
+	line(g+25,h,g+50,h-5);
+	line (g+50,h-5,g+70,h);
+    line(g+70,h,g+60,h+20);
+	
+	arc(g+50,h+35,-10,180,20);
+	circle(g+50,h+35,15);
+	circle(g+50,h+35,4);
+	
+	line(g+10,h+40,g+35,h+40);
+    
+	circle(g,h+40,10);
+	circle(g,h+40,4);
+	
+	line(g-10,h+40,g-20,h+40);
+	line (g-20,h+40,g-20,h+30);
+	line (g-20,h+30,g-17,h+30);
+	line (g-17,h+30,g-17,h+38);
+	line (g-17,h+38,g-15,h+38);
+	line (g-15,h+38,g-15,h+18);
+	
+	line(g+70,h+35,g+85,h+35);
+	line(g+85,h+40,g+85,h);
+	line(g+85,h+10,g+140,h+10);
+	line(g+140,h,g+140,h+40);
+	line(g+140,h+40,g+135,h+40);
+	
+	arc(g+120,h+40,0,180,15);
+    circle(g+120,h+40,10);
+	circle(g+120,h+40,4);
+	line(g+105,h+40,g+85,h+40);
+	line(g+70,h+38,g+85,h+38);
+	
+	//***************Rode*************//
+	line(0,70,900,70);
+	line(0,75,900,75);
+	setlinestyle(3,0,1);
+	line(0,175,900,175);
+	line(0,275,900,275);
+	setlinestyle(0,0,1);	
+	line(0,375,900,375);
+	line(0,380,900,380);
+	setcolor(1);
+	settextstyle(9,HORIZ_DIR,1);
+	outtextxy(10,0,"Game play To Use Arrow Key");
+	outtextxy(10,23,"PAUSS/START To Press");
+	outtextxy(10,45,"Back To Press");
+	setcolor(4);
+	outtextxy(370,0,"A, S, D, W");
+	outtextxy(300,23," Alt Button");
+	outtextxy(200,45,"P");
+	sprintf(msg,"Score:-%d",score);
+	outtextxy(600,5,msg);
+	setcolor(15);
+	outtextxy(500,40,"Game Developer");
+	setcolor(14);
+	outtextxy(700,23,"Sagar Mahajan");
+	outtextxy(700,45, "Kalpesh Patil");
+}
+void Gamehome()
+{
+	if(kbhit())
+		{
+			ch=getch();
+			//up
+			if(ch=='w'||ch==72){s=s-1;}
+			//down
+			if(ch=='s'||ch==80){s=s+1;}
+			if(ch==13){ent=1;}
+		}
+}
+void move()
+{	int o=-450,p=70,q=-500,r=40 ,rm=1;
+	Home:
+	while(1){
+     		settextstyle(9,HORIZ_DIR,7);
+     		setcolor(14);
+			outtextxy(o,p,"Car Game");
+			player();
+			setcolor(11);
+    	 	settextstyle(9,HORIZ_DIR,7);
+			settextstyle(9,HORIZ_DIR,4);
+			outtextxy(o+30,p+80,"Start");
+			outtextxy(o+100,p+130,"Level");
+			outtextxy(o+180,p+180,"About");
+			outtextxy(o+280,p+220,"Exit");
+			setcolor(15);
+			rectangle(q+5,r+5,q+495,r+295);
+			rectangle(q-5,r-5,q+505,r+305);
+			line(q+505,r+190,q+550,r+190);
+			line(q+505,r+200,q+550,r+200);
+			setlinestyle(2,0,1);
+			line(q+505,r+195,q+550,r+195);
+			rectangle(q,r,q+500,r+300);
+			setlinestyle(0,0,1);
+			if(rm==1){
+					if(a<=700)
+						{
+						a=a+15;
+						o=o+15;
+						q=q+15;
+					}
+			}
+		Gamehome();
+			if(s<1){s=1;}
+		if(s>4){s=4;}
+		if(o>160){
+			if(s==1){setcolor(4);outtextxy(o+30,p+80,"Start");}
+			if(s==2){setcolor(4);outtextxy(o+100,p+130,"Level");}
+			if(s==3){setcolor(4);outtextxy(o+180,p+180,"About");}
+			if(s==4){setcolor(4);outtextxy(o+280,p+220,"Exit");}
+		}
+		if(ent!=0){
+		  switch(s){
+			case 1: ent=0;	
+				goto start;cleardevice();
+			break;
+			case 2: ent=0; goto level;cleardevice();
+			break;
+			case 3:ent=0; goto Gameabout;cleardevice();
+			break;
+			case 4:ent=0; exit(0);
+			break;
+			}
+		}
+		delay(50);
+		cleardevice();
+	}
+Gameover:{
+	  int o=200,p=70,q=150,r=40;
+		while(1){
+			cleardevice();	
+			settextstyle(9,HORIZ_DIR,7);
+			setcolor(4);
+			outtextxy(o,p,"Game Over");
+			settextstyle(9,HORIZ_DIR,5);
+			setcolor(1);
+			outtextxy(o+90,p+100,"Score :-");
+			sprintf(msg,"Score:-%d",score);
+		    outtextxy(o+90,p+100,msg);
+			settextstyle(9,HORIZ_DIR,4);
+			outtextxy(o+160,p+175,"Back");
+			setcolor(15);
+			rectangle(q+5,r+5,q+545,r+295);
+			rectangle(q-5,r-5,q+555,r+305);
+			setlinestyle(2,0,1);
+			rectangle(q,r,q+550,r+300);
+			setlinestyle(0,0,1);
+			Gamehome();
+			
+	   	 if(s>1||s<1){s=1;}
+			if(s==1){setcolor(10);outtextxy(o+160,p+175,"Back");}
+		if(ent!=0){
+			switch(s){
+				case 1:ent=0;a=720;b=200;rm=2; goto Home;cleardevice();
+				break;
+			}
+		}
+		delay(50);
+		cleardevice();
+	}
+}
+Gameabout:{
+	  int o=200,p=70,q=150,r=40;
+		while(1){
+			cleardevice();	
+			settextstyle(9,HORIZ_DIR,7);
+			setcolor(6);
+			outtextxy(o,p,"Game About");
+			settextstyle(9,HORIZ_DIR,4);
+			setcolor(4);
+			outtextxy(o,p+70,"Hello Friends,");
+			settextstyle(9,HORIZ_DIR,2);
+			setcolor(15);
+			outtextxy(o+100,p+105,"You Have To Use Arrow Keys Or");
+			outtextxy(o,p+130," A,S,D,W Buttons To Play This Car Game.");
+			outtextxy(o+200,p+220,"Back");
+			setcolor(12);
+			outtextxy(o,p+170,"Game Developer");
+			setcolor(14);
+			settextstyle(9,HORIZ_DIR,4);
+			outtextxy(o+225,p+150,"Sagar Mahajan");
+			outtextxy(o+225,p+185,"Kalpesh Patil");
+			setcolor(1);
+			rectangle(q+5,r+5,q+595,r+295);
+			rectangle(q-5,r-5,q+605,r+305);
+			setlinestyle(2,0,1);
+			rectangle(q,r,q+600,r+300);
+			setlinestyle(0,0,1);
+		Gamehome();
+			if(s<1||s>1){s=1;}
+			if(s==1){setcolor(10);outtextxy(o+200,p+220,"Back");}
+			
+		if(ent!=0){
+			switch(s){
+				case 1:ent=0;a=720;b=200;rm=2; goto Home;cleardevice();
+				break;
+			}
+		}	
+		delay(50);
+		cleardevice();
+	}
+}
+level:{
+	 int o=200,p=70,q=150,r=40;
+		while(1){
+			cleardevice();	
+			setcolor(1);
+			settextstyle(9,HORIZ_DIR,7);
+			outtextxy(o,p,"Select Level");
+			settextstyle(9,HORIZ_DIR,5);
+			setcolor(11);
+			outtextxy(o+30,p+100,"1");
+			outtextxy(o+140,p+100,"2");
+			outtextxy(o+250,p+100,"3");
+			outtextxy(o+370,p+100,"4");
+			settextstyle(9,HORIZ_DIR,4);
+			outtextxy(o+160,p+175,"Back");
+			setcolor(15);
+			rectangle(q+5,r+5,q+545,r+295);
+			rectangle(q-5,r-5,q+555,r+305);
+			setlinestyle(2,0,1);
+			rectangle(q,r,q+550,r+300);
+			setlinestyle(0,0,1);
+			Gamehome();
+			settextstyle(9,HORIZ_DIR,5);
+		if(s<1){s=1;}
+		if(s>5){s=5;}
+			if(s==1){setcolor(4);outtextxy(o+30,p+100,"1");}
+			if(s==2){setcolor(4);outtextxy(o+140,p+100,"2");}
+			if(s==3){setcolor(4);outtextxy(o+250,p+100,"3");}
+			if(s==4){setcolor(4);outtextxy(o+370,p+100,"4");}
+			settextstyle(9,HORIZ_DIR,4);
+			if(s==5){setcolor(10);outtextxy(o+160,p+175,"Back");}
+		if(ent!=0){
+			switch(s){
+				case 1: level=500;goto start;cleardevice();
+					break;
+				case 2:level=1000; goto start;cleardevice();
+					break;
+				case 3:level=2000;goto start;cleardevice();
+					break;
+				case 4:level=10000;goto start;cleardevice();
+					break;
+				case 5:ent=0;a=720;b=200;rm=2; goto Home; cleardevice();
+					break;
+			}
+		}
+		delay(50);
+		cleardevice();
+	}
+}
+Gamewin:{
+	  int o=200,p=70,q=150,r=40;
+		while(1){
+			cleardevice();
+			setcolor(2);	
+			settextstyle(9,HORIZ_DIR,7);
+			outtextxy(o+40,p,"You Win");
+			setcolor(1);
+			settextstyle(9,HORIZ_DIR,5);
+			if(level==500){
+				outtextxy(o+90,p+100,"Level :- 1");
+			}
+			if(level==1000){
+				outtextxy(o+90,p+100,"Level :- 2");
+			}
+			if(level==2000){
+				outtextxy(o+90,p+100,"Level :- 3");
+			}
+			if(level==10000){
+				outtextxy(o+90,p+100,"Level :- 4");
+			}
+			settextstyle(9,HORIZ_DIR,4);
+			outtextxy(o+160,p+175,"Back");
+			rectangle(q+5,r+5,q+545,r+295);
+			rectangle(q-5,r-5,q+555,r+305);
+			setlinestyle(2,0,1);
+			rectangle(q,r,q+550,r+300);
+			setlinestyle(0,0,1);
+			Gamehome();
+			
+	   	 if(s>1||s<1){s=1;}
+			if(s==1){setcolor(10);outtextxy(o+160,p+175,"Back");setcolor(1);}
+		if(ent!=0){
+			switch(s){
+				case 1:ent=0;a=720;b=200;rm=2; goto Home;cleardevice();
+				break;
+			}
+		}
+		delay(50);
+		cleardevice();
+	}
+}
+start:a=100,b=200;
+				i=1000,j=100;
+				k=1500,l=300;
+				c=1000,d=300;
+				g=2000,h=100;
+				m=2500,n=300;
+				score=0;
+	while(1){
+		player();
+		Animy();
+		if(kbhit()){
+			ch=getch();
+			//up
+			if(ch==72||ch=='w'){b=b-30;}
+			if(ch!=72||ch=='w'){b=b;}
+			//left
+			if(ch==75||ch=='a'){a=a-30;}
+			if(ch!=75||ch=='a'){a=a;}
+			//right
+			if(ch==77||ch=='d'){a=a+30;}
+			if(ch!=77||ch=='d'){a=a;}
+			//down
+			if(ch==80||ch=='s'){b=b+30;}
+			if(ch!=80||ch=='s'){b=b;}
+			if(ch=='p'){ent=0;a=720;b=200;rm=2; goto Home;cleardevice();}	
+		}
+				m=m-40;		g=g-20;
+				i=i-20;		k=k-20;
+				c=c-20;
+				//player control
+				if(a<=50){a=50;}
+				if(b<=80){b=80;}
+				if(b>=320){b=320;}
+				if(a>=800){a=800;}
+				//car replace
+				if(i<=-100&&j==100){j=200;	i=i+1000;}
+				if(i<=-100&&j==200){j=300;	i=i+1000;}
+				if(i<=-100&&j==300){j=100;	i=i+1000;}
+				//truck
+				if(k<=-150&&l==100){l=200;	k=k+1000;}
+				if(k<=-150&&l==200){l=300;	k=k+1000;}
+				if(k<=-150&&l==300){l=100;	k=k+1000;}
+				//buss
+				if(c<=-150&&d==100){d=300;	c=c+2000;}
+				if(c<=-150&&d==200){d=100;	c=c+2000;}
+				if(c<=-150&&d==300){d=200;	c=c+2000;}
+				//teckter
+				if(g<=-150&&h==100){h=300;	g=g+2000;}
+				if(g<=-150&&h==200){h=100;	g=g+2000;}
+				if(g<=-150&&h==300){h=200;	g=g+2000;}
+				//bick
+				if(m<=-150&&n==300){n=100;	m=m+4000;}
+				if(m<=-150&&n==100){n=200;	m=m+5000;}
+				if(m<=-150&&n==200){n=300;	m=m+3000;}
+				//score count 
+				if(c==a){score=score+10;}
+				if(g==a){score=score+20;}
+				if(i==a){score=score+10;}
+				if(k==a){score=score+15;}
+				if(m==a){score=score+5;}
+				if(score>level){ent=0;goto Gamewin;cleardevice();}
+					
+				if(((a+90)>=(i-50))&&((a-50)<=(i-50))||((a+90)>=(i+90))&&((a-50)<=(i+90)))
+					{
+						if(((b)<=(j))&&((b+50)>=(j))||((b)<=(j+50))&&((b+50)>=(j+50)))
+							{
+								ent=0;goto Gameover;cleardevice();
+							}
+					}
+				if(((a+90)>=(k-50))&&((a-50)<=(k-50))||((a+90)>=(k+90))&&((a-50)<=(k+90)))
+					{
+						if(((b)<=(l-5))&&((b+50)>=(l-5))||((b)<=(l+55))&&((b+50)>=(l+55)))
+							{
+								ent=0;goto Gameover;cleardevice();
+							}
+					}
+				if(((a+90)>=(c-50))&&((a-50)<=(c-50))||((a+90)>=(c+90))&&((a-50)<=(c+90)))
+					{
+						if(((b)<=(d-5))&&((b+50)>=(d-5))||((b)<=(d+55))&&((b+50)>=(d+55)))
+							{
+								ent=0;goto Gameover;cleardevice();
+							}
+					}
+				if(((a+90)>=(g-20))&&((a-50)<=(g-20))||((a+90)>=(g+140))&&((a-50)<=(g+140)))
+					{
+						if(((b)<=(h-5))&&((b+50)>=(h-5))||((b)<=(h+50))&&((b+50)>=(h+50)))
+							{
+								ent=0;goto Gameover;cleardevice();
+							}
+					}
+				if(((a+90)>=(m-40))&&((a-50)<=(m-40))||((a+90)>=(m+80))&&((a-50)<=(m+80)))
+					{
+						if(((b)<=(n-32))&&((b+50)>=(n-32))||((b)<=(n+50))&&((b+50)>=(n+50)))
+							{
+								ent=0;goto Gameover;cleardevice();
+							}
+					}
+			delay(50);
+			cleardevice();
+		}
+}
+main(){
+		initwindow(900,400);
+		move();
+		getch();
+}
